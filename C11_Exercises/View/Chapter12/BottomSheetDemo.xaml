@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="C11_Exercises.View.Chapter12.BottomSheetDemo"
+             Shell.NavBarIsVisible="False"
+             xmlns:bottomSheet="clr-namespace:S1LV3Rman.BottomSheet;assembly=BottomSheet"
+             BackgroundColor="WhiteSmoke">
+    <ScrollView>
+    <Grid>
+        <Button
+                VerticalOptions="Center"
+                Text="Display bottom sheet"
+                Margin="20"
+                Clicked="Button_Clicked"/>
+            <bottomSheet:ModalBottomSheet x:Name="bottomSheet"
+                                          CornersRadius="30"
+                                          BackgroundColor="GhostWhite">
+                
+            </bottomSheet:ModalBottomSheet>
+        <!--<bottomSheet:ModalBottomSheet
+                        x:Name="bottomSheet"
+                        CornersRadius="30"
+                        Color="GhostWhite"
+                        BlockExpanding="False">
+            <VerticalStackLayout
+                        Padding="10">
+                <Button
+                        TextColor="Black"
+                        BackgroundColor="Transparent"
+                        Text="Share"/>
+                <Button
+                        TextColor="Black"
+                        BackgroundColor="Transparent"
+                        Text="Copy link"/>
+                <Button
+                        TextColor="Black"
+                        BackgroundColor="Transparent"
+                        Text="Rename"/>
+                <Button x:Name="hideBottomSheet"
+                        Clicked="HideBottomSheet_Clicked"
+                        BackgroundColor="LightBlue"
+                        Text="Close"/>
+            </VerticalStackLayout>
+        </bottomSheet:ModalBottomSheet>-->
+    </Grid>
+    </ScrollView>
+
+</ContentPage>

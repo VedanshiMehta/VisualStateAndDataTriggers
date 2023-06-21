@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="C11_Exercises.View.Chapter18.FluentValidationDemo"
+             xmlns:viewModel="clr-namespace:C11_Exercises.ViewModel"
+             Title="FluentValidationDemo">
+    <ContentPage.BindingContext>
+        <viewModel:RegistrationViewModel/>
+    </ContentPage.BindingContext>
+    <VerticalStackLayout
+                VerticalOptions="Center"
+                Margin="10"
+                Spacing="20">
+        <Entry
+                Placeholder="Enter Email"
+                BackgroundColor="WhiteSmoke"
+                Text="{Binding DataModel.Email}"/>
+        <Entry
+                Placeholder="Enter Password"
+                BackgroundColor="WhiteSmoke"
+                Text="{Binding DataModel.Password}"/>
+        <Entry
+                Placeholder="Enter Password"
+                BackgroundColor="WhiteSmoke"
+                Text="{Binding DataModel.ConfirmPassword}"/>
+        <Label
+                TextColor="Red"
+                Text="{Binding DataModel.Message}"
+                Margin="0,10"/>
+        <Button
+                Text="Register"
+                Command="{Binding RegisterUserCommand}"/>
+    </VerticalStackLayout>
+</ContentPage> 

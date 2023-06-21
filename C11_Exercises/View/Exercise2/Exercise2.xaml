@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="C11_Exercises.View.Exercise2.Exercise2"
+             xmlns:trigger="clr-namespace:C11_Exercises.Validation"
+             Title="HRX Store">
+    <ContentPage.Resources>
+        <Style TargetType="Button">
+            <Setter Property="VisualStateManager.VisualStateGroups">
+                <VisualStateGroupList>
+                    <VisualStateGroup x:Name="SizeStates">
+                        <VisualState x:Name="UnselectedColor">
+                            <VisualState.Setters>
+                                <Setter Property="Button.BackgroundColor" Value="LightGray" />
+                                <Setter Property="Button.TextColor" Value="Black" />
+                            </VisualState.Setters>
+                        </VisualState>
+                        <VisualState x:Name="SelectedColor">
+                            <VisualState.Setters>
+                                <Setter Property="Button.BackgroundColor" Value="Orange" />
+                                <Setter Property="Button.TextColor" Value="White" />
+                            </VisualState.Setters>
+                        </VisualState>
+                    </VisualStateGroup>
+                </VisualStateGroupList>
+            </Setter>
+            <Setter Property="FontAttributes"
+                    Value="Bold"/>
+        </Style>
+        <Style TargetType="Label" x:Key="labelBlackStyle">
+            <Setter Property="HorizontalOptions"
+                    Value="StartAndExpand"/>
+            <Setter Property="TextColor"
+                    Value="Black"/>
+            <Setter Property="FontAttributes"
+                    Value="Bold"/>
+        </Style>
+        <Style x:Key="borderStyle" TargetType="Border">
+            <Setter Property="Padding"
+                    Value="15"/>
+            <Setter Property="HeightRequest"
+                    Value="10"/>
+            <Setter Property="WidthRequest"
+                    Value="10"/>
+            <Setter Property="Stroke"
+                    Value="DarkSlateGray"/>
+            <Setter Property="BackgroundColor"
+                    Value="DarkSlateGray"/>
+            <Setter Property="StrokeShape"
+                    Value="RoundRectangle 20"/>
+            <Setter Property="HorizontalOptions"
+                    Value="Start"/>
+        </Style>
+        <Style TargetType="Label" x:Key="labelDarkSlateGrayStyle">
+            <Setter Property="HorizontalOptions"
+                    Value="Start"/>
+            <Setter Property="TextColor"
+                    Value="DarkSlateGray"/>
+            <Setter Property="FontSize"
+                    Value="16"/>
+            <Setter Property="HorizontalTextAlignment"
+                    Value="Start"/>
+            <Setter Property="VerticalOptions"
+                    Value="Center"/>
+        </Style>
+    </ContentPage.Resources>
+    <StackLayout>
+        <StackLayout Padding="15">
+            <Image Source="tshirt"
+               HeightRequest="200"/>
+            <Label Text="Round Neck Athleisure Cotton T-shirt"
+               Style="{StaticResource labelBlackStyle}"
+               Margin="0,20,0,0"
+               FontSize="16"/>
+            <HorizontalStackLayout HorizontalOptions="FillAndExpand"
+                                   Spacing="2"
+                                   Margin="0,10,0,0">
+                <Label Text="999"
+                       Style="{StaticResource labelBlackStyle}"
+                       
+                       FontSize="20"
+                       VerticalOptions="Center"/>
+                <Image Source="rupee_indian"
+                       HeightRequest="15"
+                       WidthRequest="15"/>
+            </HorizontalStackLayout>
+
+            <HorizontalStackLayout 
+                           Spacing="10"
+                           x:Name="horizontalLayout"
+                           Margin="0,20,0,0">
+                <Button Text="XS"
+                x:Name="buttonXS"
+                Clicked="Button_Clicked"/>
+                <Button Text="S"
+                x:Name="buttonS"
+                Clicked="Button_Clicked"/>
+                <Button Text="M"
+                x:Name="buttonM"
+                Clicked="Button_Clicked"/>
+                <Button Text="L"
+                x:Name="buttonL"
+                Clicked="Button_Clicked"/>
+                <Button Text="XL"                
+                x:Name="buttonXL"
+                Clicked="Button_Clicked"/>
+                <Button Text="XXL"
+                x:Name="buttonXXL"
+                Clicked="Button_Clicked"/>
+            </HorizontalStackLayout>
+
+            <Grid ColumnDefinitions=".1*,.9*"
+              RowDefinitions="*,*,*,*"
+              HorizontalOptions="FillAndExpand"
+              ColumnSpacing="-20"
+              RowSpacing="20"
+              Margin="0,30,0,0">
+                <Border Style="{StaticResource borderStyle}"
+                    Grid.Row="0"
+                    Grid.Column="0"/>
+                <Label Text="Care Instructions: Hand Wash Only"
+                   Style="{StaticResource labelDarkSlateGrayStyle}"
+                   Grid.Row="0"
+                   Grid.Column="1"/>
+                <Border Style="{StaticResource borderStyle}"
+                    Grid.Row="1"
+                    Grid.Column="0"/>
+                <Label Text="Fit Type: Regular Fit"
+                   Style="{StaticResource labelDarkSlateGrayStyle}"
+                   Grid.Row="1"
+                   Grid.Column="1"/>
+                <Border Style="{StaticResource borderStyle}"
+                    Grid.Row="2"
+                    Grid.Column="0"/>
+                <Label Text="Half Sleeves"
+                   Style="{StaticResource labelDarkSlateGrayStyle}"
+                   Grid.Row="2"
+                   Grid.Column="1"/>
+                <Border Style="{StaticResource borderStyle}"
+                    Grid.Row="3"
+                    Grid.Column="0"/>
+                <Label Text="Round Neck Tshirt"
+                   Style="{StaticResource labelDarkSlateGrayStyle}"
+                   Grid.Row="3"
+                   Grid.Column="1"/>
+            </Grid>
+        </StackLayout>
+        <Button x:Name="buttonBuyNow"
+                BackgroundColor="Orange"
+                Text="Buy Now"
+                FontSize="16"
+                FontAttributes="Bold"
+                Padding="20"
+                HorizontalOptions="FillAndExpand"
+                VerticalOptions="EndAndExpand"/>
+    </StackLayout>
+</ContentPage>

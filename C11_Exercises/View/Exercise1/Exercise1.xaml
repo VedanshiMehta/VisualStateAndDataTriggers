@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="C11_Exercises.View.Exercise1.Exercise1"
+             Title="Login">
+
+
+    <StackLayout  Padding="20"
+                  x:Name="stackLayout"
+                  VerticalOptions="CenterAndExpand">
+        
+        <Label Text="MiniShop"
+               FontSize="30"
+               FontAttributes="Bold"
+               HorizontalOptions="FillAndExpand"
+               HorizontalTextAlignment="Center">
+            <Label.FormattedText>
+                <FormattedString>
+                    <Span Text="Mini" TextColor="Black"/>
+                    <Span Text="Shop" TextColor="Orange"/>
+                </FormattedString>
+            </Label.FormattedText>
+        </Label>
+        <Border StrokeShape="RoundRectangle 10"
+                Stroke="Gray"
+                x:Name="Email"
+                HorizontalOptions="FillAndExpand"
+                Margin="0,20,0,0"
+                Padding="5">
+            <Entry x:Name="entryEmail"
+                   Placeholder="Email"
+                   PlaceholderColor="Orange"
+                   Text=""
+                   TextChanged="Entry_TextChanged">
+                
+            </Entry>
+        </Border>
+        <Border StrokeShape="RoundRectangle 10"
+                Stroke="Gray"
+                x:Name="borderPassword"
+                HorizontalOptions="FillAndExpand"
+                Margin="0,10,0,0"
+                Padding="5">
+            <Entry x:Name="entryPassword"
+                   Placeholder="Password"
+                   PlaceholderColor="Orange"
+                   Text=""
+                   TextChanged="Entry_TextChanged">
+
+            </Entry>
+        </Border>
+        <Label Text="Forgot Password?"
+               FontSize="14"
+               FontAttributes="Bold"
+               HorizontalOptions="FillAndExpand"
+               HorizontalTextAlignment="End"
+               Margin="0,5,0,0"/>
+                      
+        <Button x:Name="buttonLogin"
+                Text="Login"
+                HorizontalOptions="FillAndExpand"
+                Margin="0,20,0,0">
+            <VisualStateManager.VisualStateGroups>
+                <VisualStateGroup Name="ValidityStates">
+                    <VisualState Name="Valid">
+                        <VisualState.Setters>
+                            <Setter Property="Button.IsEnabled"
+                                TargetName="buttonLogin"
+                                Value="True"/>
+                            <Setter Property="Button.BackgroundColor"
+                                TargetName="buttonLogin"
+                                Value="Orange"/>
+                            <Setter Property="Button.TextColor"
+                                TargetName="buttonLogin"
+                                Value="White"/>
+                        </VisualState.Setters>
+                    </VisualState>
+                    <VisualState Name="InValid">
+                        <VisualState.Setters>
+                            <Setter Property="Button.IsEnabled"
+                                TargetName="buttonLogin"
+                                Value="false"/>
+                            <Setter Property="Button.BackgroundColor"
+                                TargetName="buttonLogin"
+                                Value="Gray"/>
+                            <Setter Property="Button.TextColor"
+                                TargetName="buttonLogin"
+                                Value="Black"/>
+                        </VisualState.Setters>
+                    </VisualState>
+                </VisualStateGroup>
+            </VisualStateManager.VisualStateGroups>
+        </Button>
+    </StackLayout>
+</ContentPage>

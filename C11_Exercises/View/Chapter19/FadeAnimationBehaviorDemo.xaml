@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="C11_Exercises.View.Chapter19.FadeAnimationBehaviorDemo"
+             xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+             xmlns:viewModel="clr-namespace:C11_Exercises.ViewModel"
+             Title="FadeAnimationBehaviorDemo">
+    <ContentPage.BindingContext>
+        <viewModel:CountryViewModel/>
+    </ContentPage.BindingContext>
+    <toolkit:Expander
+                    Margin="10"
+                    IsExpanded="{Binding IsExpanded}">
+        <toolkit:Expander.Header>
+            <Frame
+                    CornerRadius="10"
+                    Padding="15"
+                    Margin="0,0,0,4">
+                <Grid
+                    ColumnDefinitions="*,Auto">
+                    <Label
+                            Text="{Binding SelectedCountry}"
+                            VerticalOptions="Center"
+                            FontSize="Default" />
+                    <Image
+                            Grid.Column="1"
+                            HeightRequest="30"
+                            WidthRequest="30"
+                            Rotation="{Binding Rotation}"
+                           Source="down"/>
+                </Grid>
+            </Frame>
+        </toolkit:Expander.Header>
+        <Frame
+                    CornerRadius="10"
+                    HasShadow="True"
+                    Padding="0,10,0,0"
+                    VerticalOptions="Fill">
+            <CollectionView x:Name="collectionView"
+                            SelectionMode="Single"
+                            SelectedItem="{Binding SelectedCountry}"
+                            ItemsSource="{Binding CountryDetails}"
+                            SelectionChangedCommand="{Binding SelectCountryActionCommand}">
+                <CollectionView.ItemTemplate>
+                 
+                    <DataTemplate>
+                        <Label
+                            FontSize="16"
+                            BackgroundColor="Transparent"
+                            TextColor="Black"
+                            HorizontalTextAlignment="Center"
+                            Text="{Binding}"
+                            Padding="10"/>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+        </Frame>
+    </toolkit:Expander>
+
+
+
+<!-- Display Popup-->
+    <!--<Button
+            VerticalOptions="Center"
+            Margin="20"
+            Clicked="DisplayPopupClicked"
+            Text="Display popup"/>-->
+    
+    <!-- Avatar View -->
+    <!--<toolkit:AvatarView
+                    HeightRequest="100"
+                    WidthRequest="100"
+                    CornerRadius="50"
+                    BorderColor="Blue"
+                    BorderWidth="2"
+                    FontSize="24"
+                    BackgroundColor="LightSkyBlue"
+                    TextColor="White"
+                    Text="AD"
+                    CharacterSpacing="2"/>-->    <!--Fade Animation Demo -->
+    <!--<Frame
+            BackgroundColor="LightGreen"
+            VerticalOptions="Center"
+            Margin="20">
+        <Frame.Behaviors>
+            <toolkit:AnimationBehavior>
+                <toolkit:AnimationBehavior.AnimationType>
+                    <toolkit:FadeAnimation Opacity="0.2"
+                                             Length="300"/>
+                </toolkit:AnimationBehavior.AnimationType>
+            </toolkit:AnimationBehavior>
+        </Frame.Behaviors>
+        <Label
+                TextColor="White"
+                HorizontalTextAlignment="Center"
+                Text="Click on it"/>
+    </Frame>-->
+</ContentPage>

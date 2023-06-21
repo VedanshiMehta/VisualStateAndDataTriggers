@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="C11_Exercises.View.Chapter12.PermissionDemo"
+             Title="PermissionDemo">
+    <VerticalStackLayout VerticalOptions="CenterAndExpand">
+        <Button x:Name="buttonAccessPermission"
+                Text="Access Permission"
+                HorizontalOptions="FillAndExpand"
+                Clicked="ButtonAccessPermission_Clicked"/>
+    </VerticalStackLayout>
+</ContentPage>

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="C11_Exercises.View.Chapter14.CollectionViewDemo"
+             Shell.NavBarIsVisible="False"
+             xmlns:viewModel="clr-namespace:C11_Exercises.ViewModel">
+    <ContentPage.BindingContext>
+        <viewModel:ProductsViewModel/>
+    </ContentPage.BindingContext>
+
+    <CollectionView ItemsSource="{Binding Products}"
+                    Margin="20"
+                    RemainingItemsThreshold="2"
+                    RemainingItemsThresholdReachedCommand="{Binding LoadMoreDataCommand}">
+        <CollectionView.ItemTemplate>
+            <DataTemplate>
+                <Border
+                        x:Name="border"
+                        StrokeThickness="1"
+                        StrokeShape="RoundRectangle 10"
+                        Margin="10">
+                    <VerticalStackLayout Padding="20">
+                        <Label HorizontalOptions="Center"
+                               Text="{Binding CreatedBy.Name}"
+                               FontSize="20"
+                               TextColor="Blue"
+                               FontAttributes="Bold"/>
+
+                        <Label HorizontalOptions="Center"
+                               Text="{Binding Category.Name}"
+                               FontSize="16"
+                                FontAttributes="Bold"
+                                Margin="0,10"/>
+                        <Label
+                                HorizontalOptions="Center"
+                                FontSize="16"
+                                Text="{Binding Price,StringFormat='Price = {0}'}"/>
+                    </VerticalStackLayout>
+                </Border>
+            </DataTemplate>
+        </CollectionView.ItemTemplate>
+        <CollectionView.Footer>
+            <ActivityIndicator
+                            IsRunning="True"
+                            IsVisible="{Binding IsRunning}"
+                            HeightRequest="40"
+                            WidthRequest="40"
+                            HorizontalOptions="Center"/>
+        </CollectionView.Footer>
+    </CollectionView>
+</ContentPage>

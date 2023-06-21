@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<toolkit:Popup xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="C11_Exercises.View.Chapter19.CustomPopUp"
+             xmlns:toolkit ="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+               Color="WhiteSmoke">
+    <VerticalStackLayout
+                        Spacing="20"
+                        Padding="20"
+                        VerticalOptions="Center">
+
+        <Label
+                HorizontalTextAlignment="Center"
+                Text="Are you sure you want to make desicion?" />
+        <Image
+                HeightRequest="100"
+                WidthRequest="100"
+                Source="dotnet_bot"/>
+        <HorizontalStackLayout
+                Spacing="20"
+                HorizontalOptions="Center">
+            <Button
+                    Text="Yes"
+                    Clicked="YesButtonClicked"/>
+            <Button
+                    Text="No"
+                    Clicked="NoButtonClicked"/>
+        </HorizontalStackLayout>
+    </VerticalStackLayout>
+</toolkit:Popup>
